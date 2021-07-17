@@ -1,8 +1,10 @@
 const express=require("express")
 const app=express();
 
+app.use("/public",express.static('public'))
+
 app.get("/",(req,res)=>{
-    res.send("<h1>Weather api</h1>");
+    res.sendFile(__dirname + "/index.html");
 })
 
 app.listen(3000,function(){
